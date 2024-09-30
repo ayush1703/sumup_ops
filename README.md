@@ -3,7 +3,7 @@ Welcome to the Sum Up Operation analytics dbt project!
 ### Data Model Design:
 1. Staging Layer: Loads raw data from CSV files: contact_raw_data
 2. Intermediate Layer: Aggregates and transforms data into data marts: Resolution window calculation - 7 days and No limit, Ops performance, Channel cost 
-3. Presentation Layer: SQL queries to answer business questions: Channel performance, Agent company performance, Reolution window, Channel costs
+3. Presentation Layer: SQL queries to answer business questions: Channel performance, Agent company performance, Resolution window, Channel costs
 
 Models in Staging layer and intermediate layer are designed to load in Incremental way so that scaling the model with million of rows is possible.
 
