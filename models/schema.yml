@@ -1,0 +1,51 @@
+
+version: 2
+
+models:
+  - name: contact_raw_data
+    description: "Raw data ingested from contacts"
+    columns:
+      - name: touchpoint_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: resolution_window
+    description: "Intermediate layer model to find resolution window of similar cases within 7 days of last issue"
+    columns:
+      - name: merchant_id
+        description: "The ID of merchant reaching out "
+      - name: first_touchpoint_time
+        description: "The timestamp of first case with similar reason within the window"
+        tests:
+        - check_cols:
+            column_name2: last_touchpoint_time
+
+  - name: resolution_window_no_limit
+    description: "Intermediate layer model to find resolution window of similar cases without any day range limit"
+    columns:
+      - name: merchant_id
+        description: "The ID of merchants reaching out"
+
+  - name: channel_cost
+    description: "Intermediate layer model to find cost associated with each channel"
+    columns:
+      - name: channel
+        description: "Type of channel"
+        tests:
+        - not_null
+  
+  - name: ops_performance
+    description: "Intermediate layer model with all performance related metrics"
+    columns:
+      - name: channel
+        description: "Type of channel"
+        tests:
+        - not_null
+      - name: agent_company
+        description: "Type of agent company"
+        tests:
+        - not_null
+    
+        

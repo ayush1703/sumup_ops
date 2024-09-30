@@ -1,0 +1,6 @@
+sumup_ops:
+  outputs:
+    dev:
+      type: duckdb
+      path: dbt.duckdb
+  target: dev
