@@ -74,8 +74,3 @@ Key Insights
 
 
 
-Based on the insights, we can align with the GTM strategy team to come up with an action plan on improving the sales performance and reducing lead time. 
-
-
-
-
